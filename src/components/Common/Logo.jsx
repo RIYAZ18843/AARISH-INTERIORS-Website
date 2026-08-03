@@ -1,0 +1,58 @@
+import React from 'react';
+
+const Logo = ({ className = "w-10 h-10", light = false }) => {
+  const secondaryColor = light ? "#FFFFFF" : "#0C3833";
+  
+  return (
+    <svg 
+      viewBox="0 0 100 100" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg" 
+      className={className}
+    >
+      <defs>
+        <linearGradient id="luxuryGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#E6C280" />
+          <stop offset="30%" stopColor="#C87D53" />
+          <stop offset="70%" stopColor="#A85D33" />
+          <stop offset="100%" stopColor="#703618" />
+        </linearGradient>
+      </defs>
+
+      {/* Thin outer luxury frame */}
+      <rect x="5" y="5" width="90" height="90" stroke="url(#luxuryGold)" strokeWidth="0.75" opacity="0.6" />
+      <rect x="9" y="9" width="82" height="82" stroke={secondaryColor} strokeWidth="0.5" opacity="0.2" />
+      
+      {/* Corner accents for the frame */}
+      <path d="M5 15 L5 5 L15 5" stroke="url(#luxuryGold)" strokeWidth="1.5" />
+      <path d="M85 5 L95 5 L95 15" stroke="url(#luxuryGold)" strokeWidth="1.5" />
+      <path d="M95 85 L95 95 L85 95" stroke="url(#luxuryGold)" strokeWidth="1.5" />
+      <path d="M15 95 L5 95 L5 85" stroke="url(#luxuryGold)" strokeWidth="1.5" />
+
+      <g transform="translate(0, 2)">
+        {/* Right leg (Thick) */}
+        <path d="M44 20 L64 78 L74 78 L54 20 Z" fill="url(#luxuryGold)" />
+        
+        {/* Left leg (Thin) */}
+        <path d="M49 20 L27 78" stroke={secondaryColor} strokeWidth="1.5" />
+        
+        {/* Crossbar */}
+        <path d="M32 58 L66 58" stroke={secondaryColor} strokeWidth="1.5" />
+        
+        {/* Top Serif */}
+        <path d="M41 20 L57 20" stroke="url(#luxuryGold)" strokeWidth="1.5" />
+        
+        {/* Bottom Serif Left */}
+        <path d="M21 78 L34 78" stroke={secondaryColor} strokeWidth="1.5" />
+        
+        {/* Bottom Serif Right */}
+        <path d="M58 78 L80 78" stroke="url(#luxuryGold)" strokeWidth="1.5" />
+
+        {/* Diamond interior accent */}
+        <path d="M46 38 L48.5 41 L46 44 L43.5 41 Z" fill={secondaryColor} />
+      </g>
+    </svg>
+  );
+};
+
+export default Logo;
