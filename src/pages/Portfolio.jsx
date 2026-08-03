@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import PortfolioGallery from '../components/PortfolioGallery';
+import { siteData } from '../data/siteData';
 
 const Portfolio = () => {
   return (
@@ -8,7 +9,7 @@ const Portfolio = () => {
       <PageHeader 
         title="Client Projects" 
         subtitle="A showcase of our most exquisite interior design transformations."
-        imagePath="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+        imagePaths={siteData.pageBanners.portfolio}
       />
       <PortfolioGallery />
     </div>

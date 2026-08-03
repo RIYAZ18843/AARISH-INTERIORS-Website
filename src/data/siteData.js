@@ -46,6 +46,33 @@ export const siteData = {
     { label: 'Client Projects', href: '/portfolio' },
     { label: 'Contact', href: '/contact' }
   ],
+  pageBanners: {
+    about: [
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop"
+    ],
+    services: [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=2000&auto=format&fit=crop"
+    ],
+    portfolio: [
+      "https://images.unsplash.com/photo-1616137466211-f939a420be84?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2000&auto=format&fit=crop"
+    ],
+    contact: [
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=2000&auto=format&fit=crop"
+    ],
+    estimate: [
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop"
+    ]
+  },
   hero: {
     headline: 'Transform Your Space with Aarish Interiors',
     subheading: 'Experience luxury and comfort in every corner.',
@@ -58,22 +85,38 @@ export const siteData = {
     {
       title: 'Residential Design',
       description: 'Transform your home into a personalized sanctuary with our bespoke residential design services.',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop'
+      images: [
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600&auto=format&fit=crop'
+      ]
     },
     {
       title: 'Commercial Design',
       description: 'Create an inspiring and productive workspace that reflects your brand identity.',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop'
+      images: [
+        'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=600&auto=format&fit=crop'
+      ]
     },
     {
       title: 'Renovation',
       description: 'Breathe new life into your existing space with our comprehensive renovation solutions.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop'
+      images: [
+        'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop'
+      ]
     },
     {
       title: 'Custom Furniture',
       description: 'Unique, handcrafted furniture pieces designed specifically for your space.',
-      image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=600&auto=format&fit=crop'
+      images: [
+        'https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=600&auto=format&fit=crop'
+      ]
     }
   ],
   testimonials: [
@@ -119,8 +162,16 @@ export const siteData = {
     headline: 'Visit Our Experience Center',
     text: 'Immerse yourself in a world of design possibilities at our state-of-the-art experience center. See, touch, and feel the quality of our materials and workmanship.',
     images: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600607687126-8a3414349a51?q=80&w=600&auto=format&fit=crop'
+      [
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600607687710-cd390ba33b00?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=600&auto=format&fit=crop'
+      ],
+      [
+        'https://images.unsplash.com/photo-1600607687126-8a3414349a51?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=600&auto=format&fit=crop'
+      ]
     ]
   },
   solutions: [

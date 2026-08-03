@@ -38,7 +38,7 @@ const ServicesSection = () => {
           {siteData.services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
               <ServiceCard 
-                image={service.image}
+                images={service.images}
                 title={service.title}
                 description={service.description}
               />

@@ -4,6 +4,7 @@ import OurMission from '../components/OurMission';
 import TeamSection from '../components/TeamSection';
 import LuxurySection from '../components/LuxurySection';
 import ExperienceCenter from '../components/ExperienceCenter';
+import { siteData } from '../data/siteData';
 
 const About = () => {
   return (
@@ -11,7 +12,7 @@ const About = () => {
       <PageHeader 
         title="About Aarish Interiors" 
         subtitle="Discover our passion for creating extraordinary living spaces."
-        imagePath="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+        imagePaths={siteData.pageBanners.about}
       />
       <OurMission />
       <TeamSection />

@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import EstimateSection from '../components/EstimateSection';
+import { siteData } from '../data/siteData';
 
 const GetEstimate = () => {
   return (
@@ -8,7 +9,7 @@ const GetEstimate = () => {
       <PageHeader 
         title="Get Your Free Estimate" 
         subtitle="Take the first step towards your dream space."
-        imagePath="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+        imagePaths={siteData.pageBanners.estimate}
       />
       <EstimateSection />
     </div>

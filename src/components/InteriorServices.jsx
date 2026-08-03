@@ -47,7 +47,7 @@ const InteriorServices = () => {
               {servicesToShow.slice(0, 2).map((service, index) => (
                 <ServiceCard 
                   key={index}
-                  image={service.image}
+                  images={service.images}
                   title={service.title}
                   description={service.description}
                 />

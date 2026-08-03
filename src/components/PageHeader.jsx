@@ -1,17 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from './Common/Container';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const PageHeader = ({ title, subtitle, imagePath = "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=2000&auto=format&fit=crop" }) => {
+const defaultImages = [
+  "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=2000&auto=format&fit=crop"
+];
+
+const PageHeader = ({ title, subtitle, imagePaths = defaultImages }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = Array.isArray(imagePaths) ? imagePaths : [imagePaths];
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 6000); // 6 seconds per slide
+    return () => clearInterval(timer);
+  }, [images.length]);
+
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-darkGreen">
-      {/* Background Image */}
+      {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={imagePath}
-          alt={title}
-          className="w-full h-full object-cover"
-        />
+        <AnimatePresence mode='wait'>
+          <motion.img 
+            key={currentIndex}
+            initial={{ scale: 1.05, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            src={images[currentIndex]}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/60"></div>
       </div>
 

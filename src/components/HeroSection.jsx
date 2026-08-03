@@ -3,6 +3,8 @@ import { siteData } from '../data/siteData';
 import { FaWhatsapp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import Container from './Common/Container';
+
 const heroImages = [
   "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop", // Elegant living room
   "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000&auto=format&fit=crop", // Luxury modern kitchen
@@ -31,7 +33,7 @@ const HeroSection = () => {
             transition={{ duration: 1.5, ease: "easeOut" }}
             src={heroImages[currentIndex]} 
             alt="Luxury Interior" 
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-t from-darkGreen/90 via-darkGreen/40 to-transparent"></div>
@@ -39,7 +41,7 @@ const HeroSection = () => {
       </div>
 
       {/* Hero Content Overlay */}
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full">
+      <Container className="relative z-10 w-full">
         <div className="max-w-3xl">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -73,7 +75,7 @@ const HeroSection = () => {
             </a>
           </motion.div>
         </div>
-      </div>
+      </Container>
       
       {/* Slider Indicators */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
