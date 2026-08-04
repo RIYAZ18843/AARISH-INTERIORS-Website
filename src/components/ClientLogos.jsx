@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from './Common/SectionTitle';
 
 // Import local client logos
-import logo1 from '../assets/client-logos/63938a_afa8894cccaf43458b0bb1672042380f%7Emv2.png';
+import logo1 from '../assets/client-logos/client1.png';
 import logo2 from '../assets/client-logos/New-logo-1.png';
 import logo3 from '../assets/client-logos/aparna-logo.svg';
 import logo4 from '../assets/client-logos/hallmark-builders.png';
@@ -15,7 +15,7 @@ const LogoItem = ({ client }) => {
       <img 
         src={client.logo} 
         alt={client.name} 
-        className="max-h-16 max-w-[160px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+        className="max-h-16 max-w-[160px] object-contain transition-transform duration-500 group-hover:scale-105"
       />
     </div>
   );
@@ -23,12 +23,12 @@ const LogoItem = ({ client }) => {
 
 const ClientLogos = () => {
   const clients = [
-    { name: "Client Partner", logo: logo1 },
-    { name: "Client Partner", logo: logo2 },
+    { name: "My Home Group", logo: logo2 },
     { name: "Aparna Constructions", logo: logo3 },
     { name: "Hallmark Builders", logo: logo4 },
-    { name: "Client Partner", logo: logo5 },
-    { name: "Client Partner", logo: logo6 }
+    { name: "Rajapushpa", logo: logo5 },
+    { name: "Shriram Properties", logo: logo6 },
+    { name: "Vasavi", logo: logo1 }
   ];
 
   // Duplicate for seamless infinite loop
