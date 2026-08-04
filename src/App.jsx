@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 // Pages Lazy Loaded for Performance
 const Home = lazy(() => import('./pages/Home'));
@@ -20,6 +21,7 @@ const PageLoader = () => (
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="font-sans text-text antialiased min-h-screen flex flex-col bg-lightBeige">
         <Navbar />
         <main className="flex-grow">
