@@ -138,17 +138,17 @@ export const siteData = {
     {
       name: 'Mr. Rajesh & Family',
       project: 'My Home Bhooja',
-      youtubeId: 'nn4zG1luWHw' // Reusing ID for demonstration
+      youtubeId: 'a3ICNMQW7Ok' 
     },
     {
       name: 'Dr. Srinivas Rao',
       project: 'Aparna Sarovar',
-      youtubeId: '9xMQk9cA9x8'
+      youtubeId: '5qap5aO4i9A'
     },
     {
       name: 'Mrs. Swapna Reddy',
       project: 'Rajapushpa Provincia',
-      youtubeId: 'geI9yKlBC7c'
+      youtubeId: 'tOBlbU352U4'
     }
   ],
   stats: [

@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
             <motion.div 
               key={index} 
               variants={itemVariants}
-              className="min-w-[85vw] sm:min-w-[350px] md:min-w-[400px] flex-shrink-0 snap-center"
+              className="w-[85vw] sm:w-[320px] md:w-[340px] flex-shrink-0 snap-center"
             >
               <TestimonialCard 
                 name={testimonial.name}
