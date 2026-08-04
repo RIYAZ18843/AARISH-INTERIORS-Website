@@ -100,6 +100,13 @@ const HeroSection = () => {
       >
         <FaWhatsapp className="w-8 h-8 text-white" />
       </motion.a>
+
+      {/* Hidden preloader to cache images for smooth transitions */}
+      <div className="hidden">
+        {heroImages.map((src, idx) => (
+          <img key={`preload-${idx}`} src={src} alt="" aria-hidden="true" />
+        ))}
+      </div>
     </section>
   );
 };

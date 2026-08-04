@@ -69,6 +69,13 @@ const PageHeader = ({ title, subtitle, imagePaths = defaultImages }) => {
           </div>
         </div>
       </Container>
+
+      {/* Hidden preloader to cache images for smooth transitions */}
+      <div className="hidden">
+        {imagePaths.map((src, idx) => (
+          <img key={`preload-${idx}`} src={src} alt="" aria-hidden="true" />
+        ))}
+      </div>
     </section>
   );
 };
