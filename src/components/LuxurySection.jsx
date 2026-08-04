@@ -41,6 +41,8 @@ const LuxurySection = () => {
                 src={siteData.luxurySection.image} 
                 alt="Luxury Interior" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>

@@ -42,11 +42,15 @@ const OurMission = () => {
                 src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600&auto=format&fit=crop" 
                 alt="Interior Detail 1" 
                 className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
               <img 
                 src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=600&auto=format&fit=crop" 
                 alt="Interior Detail 2" 
                 className="w-full h-48 object-cover rounded-2xl shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="space-y-4">
@@ -54,11 +58,15 @@ const OurMission = () => {
                 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=600&auto=format&fit=crop" 
                 alt="Interior Detail 3" 
                 className="w-full h-48 object-cover rounded-2xl shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
               <img 
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop" 
                 alt="Interior Detail 4" 
                 className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </motion.div>

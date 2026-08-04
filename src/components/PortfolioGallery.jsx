@@ -28,6 +28,8 @@ const PortfolioGallery = () => {
               <img 
                 src={img} 
                 alt={`Portfolio Project ${index + 1}`} 
+                loading="lazy"
+                decoding="async"
               />
               <div className="mask rounded-2xl">
                 <h2 className="text-white font-serif text-2xl tracking-widest uppercase mb-4 text-center">Project {index + 1}</h2>

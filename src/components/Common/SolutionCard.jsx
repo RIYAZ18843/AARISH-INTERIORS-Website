@@ -8,6 +8,8 @@ const SolutionCard = ({ icon: Icon, label, image }) => {
           src={image} 
           alt={label} 
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" 
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
       </div>

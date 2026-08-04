@@ -67,7 +67,7 @@ const DetailedServicesList = () => {
                   
                   {/* Front Face - Image Background */}
                   <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-8">
                       <h3 className="text-2xl font-serif text-white font-medium">{service.title}</h3>
                       <div className="w-12 h-1 bg-primary mt-4 rounded-full"></div>
