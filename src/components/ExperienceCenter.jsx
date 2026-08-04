@@ -6,18 +6,24 @@ import Button from './Common/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ExperienceCenter = () => {
+  const [index1, setIndex1] = useState(0);
   const [index2, setIndex2] = useState(0);
+  const images1 = siteData.experienceCenter.images[0];
   const images2 = siteData.experienceCenter.images[1];
 
   useEffect(() => {
+    const timer1 = setInterval(() => {
+      setIndex1((prev) => (prev + 1) % images1.length);
+    }, 5000);
     const timer2 = setInterval(() => {
       setIndex2((prev) => (prev + 1) % images2.length);
-    }, 7000);
+    }, 7000); // Different interval for offset animation
 
     return () => {
+      clearInterval(timer1);
       clearInterval(timer2);
     };
-  }, [images2.length]);
+  }, [images1.length, images2.length]);
 
   return (
     <section className="py-24 bg-white overflow-hidden">
@@ -44,15 +50,30 @@ const ExperienceCenter = () => {
             </Button>
           </motion.div>
 
-          {/* Right Image */}
+          {/* Right Images */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full lg:w-1/2 flex"
+            className="w-full lg:w-1/2 flex gap-6"
           >
-            <div className="w-full relative group overflow-hidden rounded-2xl shadow-2xl bg-gray-100 aspect-video lg:aspect-[4/5]">
+            <div className="w-1/2 mt-12 relative group overflow-hidden rounded-2xl shadow-2xl bg-gray-100 aspect-[4/5]">
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={index1}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
+                  src={images1[index1]} 
+                  alt="Experience Center 1" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+            </div>
+            <div className="w-1/2 mb-12 relative group overflow-hidden rounded-2xl shadow-2xl bg-gray-100 aspect-[4/5]">
               <AnimatePresence mode="wait">
                 <motion.img 
                   key={index2}
@@ -61,7 +82,7 @@ const ExperienceCenter = () => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1 }}
                   src={images2[index2]} 
-                  alt="Experience Center" 
+                  alt="Experience Center 2" 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </AnimatePresence>
