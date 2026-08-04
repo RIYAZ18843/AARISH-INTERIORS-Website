@@ -42,10 +42,9 @@ const TestimonialsSection = () => {
           {siteData.testimonials.map((testimonial, index) => (
             <motion.div key={index} variants={itemVariants}>
               <TestimonialCard 
-                image={testimonial.image}
                 name={testimonial.name}
                 review={testimonial.review}
-                videoUrl={testimonial.videoUrl}
+                youtubeId={testimonial.youtubeId}
               />
             </motion.div>
           ))}
