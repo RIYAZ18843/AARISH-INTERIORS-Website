@@ -1,37 +1,34 @@
 import React from 'react';
 import SectionTitle from './Common/SectionTitle';
 
-const LogoItem = ({ client }) => {
-  const [imgError, setImgError] = React.useState(false);
+// Import local client logos
+import logo1 from '../assets/client-logos/63938a_afa8894cccaf43458b0bb1672042380f%7Emv2.png';
+import logo2 from '../assets/client-logos/New-logo-1.png';
+import logo3 from '../assets/client-logos/aparna-logo.svg';
+import logo4 from '../assets/client-logos/hallmark-builders.png';
+import logo5 from '../assets/client-logos/image.jpeg';
+import logo6 from '../assets/client-logos/logo (2).png';
 
+const LogoItem = ({ client }) => {
   return (
     <div className="flex items-center justify-center px-10 py-6 mx-4 border border-gray-200 rounded-lg shadow-sm bg-white min-w-[220px] h-[120px] group cursor-pointer transition-colors hover:border-primary/30">
-      {!imgError ? (
-        <img 
-          src={`https://logo.clearbit.com/${client.domain}`} 
-          alt={client.name} 
-          className="max-h-14 max-w-[150px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-          onError={() => setImgError(true)}
-        />
-      ) : (
-        <span className="text-xl font-serif text-heading font-medium whitespace-nowrap text-gray-500 group-hover:text-primary transition-colors">
-          {client.name}
-        </span>
-      )}
+      <img 
+        src={client.logo} 
+        alt={client.name} 
+        className="max-h-16 max-w-[160px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+      />
     </div>
   );
 };
 
 const ClientLogos = () => {
   const clients = [
-    { name: "My Home", domain: "myhomeconstructions.com" },
-    { name: "Aparna", domain: "aparnaconstructions.com" },
-    { name: "Rajapushpa", domain: "rajapushpa.in" },
-    { name: "Vasavi", domain: "vasavigroup.com" },
-    { name: "GHR Titania", domain: "ghrinfra.com" },
-    { name: "Hallmarks", domain: "hallmarkbuilders.in" },
-    { name: "Shriram Properties", domain: "shriramproperties.com" },
-    { name: "KMV Vivan", domain: "kmvgroup.com" }
+    { name: "Client Partner", logo: logo1 },
+    { name: "Client Partner", logo: logo2 },
+    { name: "Aparna Constructions", logo: logo3 },
+    { name: "Hallmark Builders", logo: logo4 },
+    { name: "Client Partner", logo: logo5 },
+    { name: "Client Partner", logo: logo6 }
   ];
 
   // Duplicate for seamless infinite loop
