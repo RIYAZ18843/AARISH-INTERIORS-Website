@@ -136,19 +136,39 @@ export const siteData = {
       youtubeId: 'geI9yKlBC7c'
     },
     {
-      name: 'Mr. Rajesh & Family',
+      name: 'Mr. & Mrs. Reddy',
       project: 'My Home Bhooja',
-      youtubeId: 'a3ICNMQW7Ok' 
+      youtubeId: 'x1RV5cLvNYY'
     },
     {
       name: 'Dr. Srinivas Rao',
       project: 'Aparna Sarovar',
-      youtubeId: '5qap5aO4i9A'
+      youtubeId: 'mVrOhTBfWkM'
     },
     {
-      name: 'Mrs. Swapna Reddy',
+      name: 'Mrs. Swapna',
       project: 'Rajapushpa Provincia',
-      youtubeId: 'tOBlbU352U4'
+      youtubeId: 'TsPMiRvbi0w'
+    },
+    {
+      name: 'Mr. Ramesh Kumar',
+      project: 'Prestige High Fields',
+      youtubeId: '195_ssxfcOo'
+    },
+    {
+      name: 'Mrs. Lakshmi',
+      project: 'Sriram Chirping',
+      youtubeId: 'eqgoczM5qeU'
+    },
+    {
+      name: 'Mr. & Mrs. Sharma',
+      project: 'Hallmarks',
+      youtubeId: '20bJ0PMtWpA'
+    },
+    {
+      name: 'Dr. Anitha',
+      project: 'KMV Vivan',
+      youtubeId: 'ar3m1g7vPdU'
     }
   ],
   stats: [
