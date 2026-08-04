@@ -123,17 +123,20 @@ export const siteData = {
     {
       name: 'Sarah Johnson',
       review: 'Aarish Interiors transformed our house into a dream home. Their attention to detail is unmatched.',
-      image: 'https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=70&w=600&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=70&w=600&auto=format&fit=crop',
+      videoUrl: 'https://www.youtube.com/watch?v=a3ICNMQW7Ok'
     },
     {
       name: 'Michael Chen',
       review: 'Professional, creative, and delivered on time. Highly recommended for any interior project.',
-      image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=70&w=600&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=70&w=600&auto=format&fit=crop',
+      videoUrl: 'https://www.youtube.com/watch?v=5qap5aO4i9A'
     },
     {
       name: 'Priya Sharma',
       review: 'The team understood our vision perfectly and executed it flawlessly.',
-      image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=70&w=600&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=70&w=600&auto=format&fit=crop',
+      videoUrl: 'https://www.youtube.com/watch?v=tOBlbU352U4'
     }
   ],
   stats: [

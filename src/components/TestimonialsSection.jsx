@@ -45,6 +45,7 @@ const TestimonialsSection = () => {
                 image={testimonial.image}
                 name={testimonial.name}
                 review={testimonial.review}
+                videoUrl={testimonial.videoUrl}
               />
             </motion.div>
           ))}
