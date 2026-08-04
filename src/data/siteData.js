@@ -134,6 +134,21 @@ export const siteData = {
       name: 'Mrs. Arvinda Devi',
       project: 'Akanksha Villas',
       youtubeId: 'geI9yKlBC7c'
+    },
+    {
+      name: 'Mr. Rajesh & Family',
+      project: 'My Home Bhooja',
+      youtubeId: 'nn4zG1luWHw' // Reusing ID for demonstration
+    },
+    {
+      name: 'Dr. Srinivas Rao',
+      project: 'Aparna Sarovar',
+      youtubeId: '9xMQk9cA9x8'
+    },
+    {
+      name: 'Mrs. Swapna Reddy',
+      project: 'Rajapushpa Provincia',
+      youtubeId: 'geI9yKlBC7c'
     }
   ],
   stats: [
