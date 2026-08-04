@@ -2,12 +2,12 @@ import React from 'react';
 import SectionTitle from './Common/SectionTitle';
 
 // Import local client logos
-import logo1 from '../assets/client-logos/client1.png';
-import logo2 from '../assets/client-logos/New-logo-1.png';
+import logo1 from '../assets/client-logos/client1.webp';
+import logo2 from '../assets/client-logos/New-logo-1.webp';
 import logo3 from '../assets/client-logos/aparna-logo.svg';
-import logo4 from '../assets/client-logos/hallmark-builders.png';
-import logo5 from '../assets/client-logos/image.jpeg';
-import logo6 from '../assets/client-logos/logo (2).png';
+import logo4 from '../assets/client-logos/hallmark-builders.webp';
+import logo5 from '../assets/client-logos/image.webp';
+import logo6 from '../assets/client-logos/logo (2).webp';
 
 const LogoItem = ({ client }) => {
   return (

@@ -3,7 +3,7 @@ import Container from './Common/Container';
 import SectionTitle from './Common/SectionTitle';
 import { motion } from 'framer-motion';
 
-const imageModules = import.meta.glob('../assets/client-images/*.jpeg', { eager: true, import: 'default' });
+const imageModules = import.meta.glob('../assets/client-images/*.webp', { eager: true, import: 'default' });
 const portfolioImages = Object.values(imageModules);
 
 const PortfolioGallery = () => {
