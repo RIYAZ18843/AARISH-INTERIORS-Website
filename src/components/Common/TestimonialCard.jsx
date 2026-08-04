@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TestimonialCard = ({ name, review, youtubeId }) => {
+const TestimonialCard = ({ name, project, youtubeId }) => {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col h-full hover:shadow-2xl transition-all duration-300">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.05)] border border-gray-100 flex flex-col hover:shadow-xl transition-shadow duration-300">
       <a 
         href={`https://www.youtube.com/watch?v=${youtubeId}`} 
         target="_blank" 
@@ -29,9 +29,9 @@ const TestimonialCard = ({ name, review, youtubeId }) => {
           </div>
         </div>
       </a>
-      <div className="p-8 text-center flex-grow flex flex-col justify-between bg-white">
-        <p className="text-text italic mb-6 font-serif leading-relaxed text-lg">&quot;{review}&quot;</p>
-        <h4 className="font-bold text-heading text-sm tracking-wide uppercase">{name}</h4>
+      <div className="p-6 text-center bg-white border-t border-gray-100">
+        <h4 className="font-bold text-heading text-[15px] mb-1">{name}</h4>
+        <p className="text-gray-500 text-[14px] font-light">{project}</p>
       </div>
     </div>
   );

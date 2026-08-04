@@ -121,19 +121,19 @@ export const siteData = {
   ],
   testimonials: [
     {
-      name: 'Sarah Johnson',
-      review: 'Aarish Interiors transformed our house into a dream home. Their attention to detail is unmatched.',
-      youtubeId: 'a3ICNMQW7Ok'
+      name: 'Mr. Sushanth & Mrs. Vishwasri',
+      project: 'Lansum Eldorado',
+      youtubeId: 'nn4zG1luWHw'
     },
     {
-      name: 'Michael Chen',
-      review: 'Professional, creative, and delivered on time. Highly recommended for any interior project.',
-      youtubeId: '5qap5aO4i9A'
+      name: 'Mrs. Bhavya',
+      project: 'Candeur 40',
+      youtubeId: '9xMQk9cA9x8'
     },
     {
-      name: 'Priya Sharma',
-      review: 'The team understood our vision perfectly and executed it flawlessly.',
-      youtubeId: 'tOBlbU352U4'
+      name: 'Mrs. Arvinda Devi',
+      project: 'Akanksha Villas',
+      youtubeId: 'geI9yKlBC7c'
     }
   ],
   stats: [

@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
       <Container>
         <SectionTitle 
           title="Client Testimonials" 
-          subtitle="Hear what our clients have to say about their experience working with Aarish Interiors to create their dream spaces."
+          subtitle="See what our valued clients have to say about their journey with Aarish Interiors. Every project reflects our commitment to quality, creativity, and customer satisfaction."
         />
         
         <motion.div 
@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
             <motion.div key={index} variants={itemVariants}>
               <TestimonialCard 
                 name={testimonial.name}
-                review={testimonial.review}
+                project={testimonial.project}
                 youtubeId={testimonial.youtubeId}
               />
             </motion.div>
