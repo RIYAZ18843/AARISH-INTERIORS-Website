@@ -17,7 +17,7 @@ const EstimateSection = () => {
     // REPLACE THESE PLACEHOLDERS WITH YOUR ACTUAL KEYS!
     const SERVICE_ID = 'service_ltlwp4w'; // From your screenshot
     const TEMPLATE_ID = 'template_ynuyi29'; // Correct Template ID
-    const PUBLIC_KEY = 'q3kILXJuNLcLxXviW'; // Inserted from your screenshot!
+    const PUBLIC_KEY = '9Fas_kh6gwSSFrMjo'; // User's real public key
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
       publicKey: PUBLIC_KEY,
