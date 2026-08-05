@@ -5,18 +5,18 @@ import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
-    name: "Aarish Kumar",
-    role: "Founder & Lead Designer",
+    name: "Azhar",
+    role: "CEO & Founder",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
   },
   {
-    name: "Priya Sharma",
-    role: "Senior Interior Architect",
+    name: "Sarah Khan",
+    role: "Lead Interior Designer",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
   },
   {
-    name: "Rahul Verma",
-    role: "Project Manager",
+    name: "Rohan Mehta",
+    role: "Project Director",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
   }
 ];

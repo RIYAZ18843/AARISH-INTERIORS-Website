@@ -36,7 +36,7 @@ export const siteData = {
   social: [
     { icon: FaFacebookF, link: '#' },
     { icon: FaTwitter, link: '#' },
-    { icon: FaInstagram, link: '#' },
+    { icon: FaInstagram, link: 'https://www.instagram.com/aarish_interiors?igsh=MW5pNzhibGV0Y3lw' },
     { icon: FaLinkedinIn, link: '#' }
   ],
   navLinks: [
