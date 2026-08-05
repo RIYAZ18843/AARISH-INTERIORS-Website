@@ -16,7 +16,7 @@ const EstimateSection = () => {
 
     // REPLACE THESE PLACEHOLDERS WITH YOUR ACTUAL KEYS!
     const SERVICE_ID = 'service_ltlwp4w'; // From your screenshot
-    const TEMPLATE_ID = 'template_mhyvami'; // Inserted from your screenshot!
+    const TEMPLATE_ID = 'template_mhyvami'; // Correct Template ID
     const PUBLIC_KEY = 'q3kILXJuNLcLxXviW'; // Inserted from your screenshot!
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
@@ -29,8 +29,8 @@ const EstimateSection = () => {
           setTimeout(() => setSubmitStatus(null), 5000);
       }, (error) => {
           setIsSubmitting(false);
-          setSubmitStatus('error');
-          console.error(error.text);
+          setSubmitStatus(`error: ${error.text || error.message || 'Unknown error'}`);
+          console.error("EmailJS Error details:", error);
       });
   };
 
@@ -119,9 +119,10 @@ const EstimateSection = () => {
                   </motion.div>
                 )}
                 
-                {submitStatus === 'error' && (
+                {submitStatus && submitStatus.startsWith('error') && (
                   <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="p-4 bg-red-50 text-red-700 rounded-xl mt-4 border border-red-200">
-                    <p className="font-medium text-center">❌ Oops! Something went wrong. Please check your EmailJS keys or try again.</p>
+                    <p className="font-medium text-center">❌ Oops! {submitStatus}</p>
+                    <p className="text-sm text-center mt-2">Did you click "Connect Account" in the EmailJS dashboard?</p>
                   </motion.div>
                 )}
               </form>
