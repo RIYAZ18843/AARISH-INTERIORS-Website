@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Container from './Common/Container';
 import Button from './Common/Button';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 const EstimateSection = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // REPLACE THESE PLACEHOLDERS WITH YOUR ACTUAL KEYS!
+    const SERVICE_ID = 'service_ltlwp4w'; // From your screenshot
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID_HERE'; // e.g., 'template_xyz123'
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY_HERE'; // e.g., 'abc123xyz890'
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then((result) => {
+          setIsSubmitting(false);
+          setSubmitStatus('success');
+          form.current.reset();
+          
+          // Clear success message after 5 seconds
+          setTimeout(() => setSubmitStatus(null), 5000);
+      }, (error) => {
+          setIsSubmitting(false);
+          setSubmitStatus('error');
+          console.error(error.text);
+      });
+  };
+
   return (
     <section className="py-24 bg-lightBeige relative overflow-hidden">
       <Container>
@@ -39,49 +69,61 @@ const EstimateSection = () => {
             <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
               <h3 className="text-2xl font-bold text-heading mb-8">Fill the details below</h3>
               
-              <form className="space-y-6">
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">First Name*</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="John" />
+                    <input type="text" name="first_name" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="John" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Last Name*</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="Doe" />
+                    <input type="text" name="last_name" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="Doe" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email Address*</label>
-                    <input type="email" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="john@example.com" />
+                    <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="john@example.com" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number*</label>
-                    <input type="tel" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="+1 (555) 000-0000" />
+                    <input type="tel" name="phone" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="+1 (555) 000-0000" />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Property Type*</label>
-                  <select className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors appearance-none bg-white">
-                    <option>Select Property Type</option>
-                    <option>Apartment (1BHK)</option>
-                    <option>Apartment (2BHK)</option>
-                    <option>Apartment (3BHK+)</option>
-                    <option>Villa / Independent House</option>
-                    <option>Commercial Space</option>
+                  <select name="property_type" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors appearance-none bg-white">
+                    <option value="">Select Property Type</option>
+                    <option value="Apartment (1BHK)">Apartment (1BHK)</option>
+                    <option value="Apartment (2BHK)">Apartment (2BHK)</option>
+                    <option value="Apartment (3BHK+)">Apartment (3BHK+)</option>
+                    <option value="Villa / Independent House">Villa / Independent House</option>
+                    <option value="Commercial Space">Commercial Space</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Project Scope / Message</label>
-                  <textarea rows="4" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none" placeholder="Tell us a bit about what you are looking for..."></textarea>
+                  <textarea name="message" rows="4" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none" placeholder="Tell us a bit about what you are looking for..."></textarea>
                 </div>
 
-                <Button variant="primary" className="w-full py-4 text-lg mt-4">
-                  Get Free Estimate
+                <Button type="submit" variant="primary" className="w-full py-4 text-lg mt-4" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending Request...' : 'Get Free Estimate'}
                 </Button>
+
+                {submitStatus === 'success' && (
+                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="p-4 bg-green-50 text-green-700 rounded-xl mt-4 border border-green-200">
+                    <p className="font-medium text-center">✅ Thank you! Your estimate request has been sent.</p>
+                  </motion.div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="p-4 bg-red-50 text-red-700 rounded-xl mt-4 border border-red-200">
+                    <p className="font-medium text-center">❌ Oops! Something went wrong. Please check your EmailJS keys or try again.</p>
+                  </motion.div>
+                )}
               </form>
             </div>
           </motion.div>
