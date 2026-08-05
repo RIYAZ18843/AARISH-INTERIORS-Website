@@ -15,7 +15,7 @@ const EstimateSection = () => {
     setSubmitStatus(null);
 
     // REPLACE THESE PLACEHOLDERS WITH YOUR ACTUAL KEYS!
-    const SERVICE_ID = 'service_ltlwp4w'; // From your screenshot
+    const SERVICE_ID = 'service_rpjs51p'; // From your screenshot
     const TEMPLATE_ID = 'template_ynuyi29'; // Correct Template ID
     const PUBLIC_KEY = '9Fas_kh6gwSSFrMjo'; // User's real public key
 
