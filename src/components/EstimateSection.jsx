@@ -16,7 +16,7 @@ const EstimateSection = () => {
 
     // REPLACE THESE PLACEHOLDERS WITH YOUR ACTUAL KEYS!
     const SERVICE_ID = 'service_ltlwp4w'; // From your screenshot
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID_HERE'; // e.g., 'template_xyz123'
+    const TEMPLATE_ID = 'template_mhyvami'; // Inserted from your screenshot!
     const PUBLIC_KEY = 'q3kILXJuNLcLxXviW'; // Inserted from your screenshot!
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
