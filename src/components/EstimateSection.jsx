@@ -19,7 +19,9 @@ const EstimateSection = () => {
     const TEMPLATE_ID = 'template_mhyvami'; // Correct Template ID
     const PUBLIC_KEY = 'q3kILXJuNLcLxXviW'; // Inserted from your screenshot!
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+      publicKey: PUBLIC_KEY,
+    })
       .then((result) => {
           setIsSubmitting(false);
           setSubmitStatus('success');
