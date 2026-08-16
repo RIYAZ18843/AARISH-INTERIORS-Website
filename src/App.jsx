@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import LenisProvider from './components/LenisProvider';
 
 // Pages Lazy Loaded for Performance
 const Home = lazy(() => import('./pages/Home'));
@@ -20,25 +21,27 @@ const PageLoader = () => (
 
 const App = () => {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="font-sans text-text antialiased min-h-screen flex flex-col bg-lightBeige">
-        <Navbar />
-        <main className="flex-grow">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/get-estimate" element={<GetEstimate />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <LenisProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="font-sans text-text antialiased min-h-screen flex flex-col bg-lightBeige">
+          <Navbar />
+          <main className="flex-grow">
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/get-estimate" element={<GetEstimate />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </LenisProvider>
   );
 }
 

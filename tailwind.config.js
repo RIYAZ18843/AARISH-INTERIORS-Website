@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#C5A059', // Champagne Gold
-        darkGreen: '#0B1120', // Midnight Slate (keeping variable name to prevent breaking classes)
+        primary: '#D4AF37', // Rich Metallic Gold
+        darkGreen: '#0F0F0F', // Ultra-Premium Studio Black (keeps 'darkGreen' variable name for stability)
         lightBeige: '#FAFAFA', // Ultra-clean off-white
         heading: '#0F172A', // Slate 900
         text: '#475569' // Slate 600

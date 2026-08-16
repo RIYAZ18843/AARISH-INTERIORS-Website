@@ -1,4 +1,5 @@
 import React from 'react';
+import Preloader from '../components/Preloader';
 import HeroSection from '../components/HeroSection';
 import IntroSection from '../components/IntroSection';
 import ServicesSection from '../components/ServicesSection';
@@ -17,6 +18,7 @@ import FinalCTA from '../components/FinalCTA';
 const Home = () => {
   return (
     <>
+      <Preloader />
       <HeroSection />
       <IntroSection />
       <ServicesSection />

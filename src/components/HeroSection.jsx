@@ -5,58 +5,68 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import Container from './Common/Container';
 
-const heroImages = [
-  "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop", // Elegant living room
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000&auto=format&fit=crop", // Luxury modern kitchen
-  "https://images.unsplash.com/photo-1616137466211-f939a420be84?q=80&w=2000&auto=format&fit=crop"  // Premium bedroom
-];
+import heroVideo from '../assets/Aarish_Interiors_sign_in_living_202608161741.mp4';
 
 const HeroSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 8000); // Increased wait time so users can see the image
-    return () => clearInterval(timer);
-  }, []);
 
   return (
-    <section className="relative h-[80vh] flex items-center pt-32 overflow-hidden bg-darkGreen">
-      <div className="absolute inset-0 z-0">
-        <AnimatePresence mode='wait'>
-          <motion.img 
-            key={currentIndex}
-            initial={{ scale: 1.05, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.7 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            src={heroImages[currentIndex]} 
-            alt="Luxury Interior" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-darkGreen/90 via-darkGreen/40 to-transparent"></div>
-        <div className="absolute inset-0 bg-black/20"></div> {/* Extra dimming for text readability */}
+    <section className="relative flex flex-col min-h-screen pt-24 md:pt-32 pb-12 md:pb-20 overflow-hidden bg-white md:bg-darkGreen">
+      {/* Mobile Banner Video / Desktop Full Background */}
+      <div className="relative md:absolute inset-0 z-0 w-full h-[35vh] md:h-full flex-shrink-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-darkGreen/90 via-darkGreen/40 to-transparent"></div>
+        <div className="hidden md:block absolute inset-0 bg-black/20"></div> {/* Extra dimming for text readability */}
       </div>
 
       {/* Hero Content Overlay */}
-      <Container className="relative z-10 w-full">
-        <div className="max-w-3xl">
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-serif text-white font-medium leading-tight mb-6"
+      <Container className="relative z-10 w-full flex-grow flex flex-col justify-center md:justify-end pt-10 md:pt-0 md:pb-12">
+        <div className="max-w-3xl text-center md:text-left mx-auto md:mx-0">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: 0.2
+                }
+              }
+            }}
+            className="mb-6 flex flex-wrap justify-center md:justify-start"
           >
-            {siteData.hero.headline}
-          </motion.h1>
+            {siteData.hero.headline.split(" ").map((word, index) => (
+              <span key={index} className="inline-block mr-3 overflow-hidden">
+                {word.split("").map((char, charIndex) => (
+                  <motion.span
+                    key={charIndex}
+                    variants={{
+                      hidden: { y: "100%", opacity: 0 },
+                      visible: { y: 0, opacity: 1, transition: { ease: [0.215, 0.610, 0.355, 1.000], duration: 0.8 } }
+                    }}
+                    className="inline-block text-4xl md:text-5xl lg:text-7xl font-serif text-heading md:text-white font-medium leading-tight"
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </span>
+            ))}
+          </motion.div>
           
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/90 mb-10 font-light max-w-2xl"
+            className="text-lg md:text-xl text-text md:text-white/90 mb-10 font-light max-w-2xl mx-auto md:mx-0"
           >
             {siteData.hero.subheading}
           </motion.p>
@@ -65,28 +75,18 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
             <a href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-medium hover:bg-primary/90 transition-colors rounded-none shadow-lg">
               Book a Consultation
             </a>
-            <a href="/portfolio" className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white border border-white hover:bg-white hover:text-darkGreen transition-colors rounded-none">
+            <a href="/portfolio" className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-primary border border-primary md:text-white md:border-white hover:bg-primary hover:text-white md:hover:bg-white md:hover:text-darkGreen transition-colors rounded-none">
               View Our Work
             </a>
           </motion.div>
         </div>
       </Container>
       
-      {/* Slider Indicators */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
-        {heroImages.map((_, idx) => (
-          <button 
-            key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white/80'}`}
-          />
-        ))}
-      </div>
 
       {/* Floating WhatsApp Button */}
       <motion.a 
@@ -101,12 +101,6 @@ const HeroSection = () => {
         <FaWhatsapp className="w-8 h-8 text-white" />
       </motion.a>
 
-      {/* Hidden preloader to cache images for smooth transitions */}
-      <div className="hidden">
-        {heroImages.map((src, idx) => (
-          <img key={`preload-${idx}`} src={src} alt="" aria-hidden="true" />
-        ))}
-      </div>
     </section>
   );
 };
