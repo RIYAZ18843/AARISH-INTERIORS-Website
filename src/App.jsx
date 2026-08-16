@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LenisProvider from './components/LenisProvider';
+import AIChatbot from './components/AIChatbot';
 
 // Pages Lazy Loaded for Performance
 const Home = lazy(() => import('./pages/Home'));
@@ -39,6 +40,7 @@ const App = () => {
             </Suspense>
           </main>
           <Footer />
+          <AIChatbot />
         </div>
       </Router>
     </LenisProvider>
