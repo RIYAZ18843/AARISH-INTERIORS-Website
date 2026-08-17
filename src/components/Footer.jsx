@@ -68,7 +68,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="text-primary shrink-0" size={20} />
-                <a href="https://wa.me/919010952596?text=Hello%20Aarish%20Interiors!%20%F0%9F%91%8B%0AI%20am%20looking%20for%20interior%20design%20services%20for%20my%20property%3A%0A%0A%5B%20%5D%201%20BHK%0A%5B%20%5D%202%20BHK%0A%5B%20%5D%203%20BHK%2B%0A%5B%20%5D%20Villa%0A%0APlease%20share%20more%20details." target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                <a href="https://wa.me/919010952596?text=Hello%20Aarish%20Interiors!%20%E2%9C%A8%0A%0AI%20was%20visiting%20your%20website%20(aarishinteriors.in)%20and%20looking%20at%20your%20beautiful%20portfolio.%20I%20am%20interested%20in%20interior%20design%20and%20custom%20cupboard%20%2F%20woodwork%20for%20my%20property.%0A%0AMy%20property%20type%20is%3A%0A%5B%20%5D%201%20BHK%0A%5B%20%5D%202%20BHK%0A%5B%20%5D%203%20BHK%2B%0A%5B%20%5D%20Villa%20%2F%20Independent%20House%0A%0ACould%20you%20please%20share%20more%20details%20about%20your%20design%20process%2C%20packages%2C%20and%20consultation%3F%20Looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                   {siteData.contact.phone}
                 </a>
               </li>
