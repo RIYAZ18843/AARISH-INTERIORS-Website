@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LenisProvider from './components/LenisProvider';
 import AIChatbot from './components/AIChatbot';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // Pages Lazy Loaded for Performance
 const Home = lazy(() => import('./pages/Home'));
@@ -41,6 +42,7 @@ const App = () => {
           </main>
           <Footer />
           <AIChatbot />
+          <WhatsAppButton />
         </div>
       </Router>
     </LenisProvider>
