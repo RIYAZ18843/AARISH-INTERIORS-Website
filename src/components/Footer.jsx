@@ -74,7 +74,9 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Mail className="text-primary shrink-0" size={20} />
-                <span>{siteData.contact.email}</span>
+                <a href={`mailto:${siteData.contact.email}`} className="hover:text-primary transition-colors">
+                  {siteData.contact.email}
+                </a>
               </li>
             </ul>
           </div>

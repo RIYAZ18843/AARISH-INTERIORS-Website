@@ -30,8 +30,8 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 export const siteData = {
   contact: {
     phone: '+91 9010952596',
-    email: 'info@aarishinteriors.com',
-    address: 'House No. 1, Attapur, Upperpally, Pillar No. 190, Hyderabad 500048, India'
+    email: 'aarishinteriors@gmail.com',
+    address: 'Attapur, Upperpally, Pillar No. 190, Hyderabad 500048, India'
   },
   social: [
     { icon: FaFacebookF, link: '#' },
