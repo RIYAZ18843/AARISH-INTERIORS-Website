@@ -32,7 +32,7 @@ const AIChatbot = () => {
     // Simulate AI thinking and responding
     setTimeout(() => {
       setIsTyping(false);
-      
+
       const userText = inputValue.toLowerCase();
       let aiResponseText = "";
       let action = null;
@@ -54,7 +54,7 @@ const AIChatbot = () => {
         ];
         aiResponseText = genericResponses[Math.floor(Math.random() * genericResponses.length)];
       }
-      
+
       setMessages(prev => [...prev, { sender: 'ai', text: aiResponseText }]);
     }, 1500); // 1.5 second simulated typing delay
   };
@@ -128,15 +128,15 @@ const AIChatbot = () => {
             {/* Input Area */}
             <div className="p-3 bg-white border-t border-gray-100">
               <form onSubmit={handleSendMessage} className="flex gap-2 items-center bg-gray-50 p-1 rounded-full border border-gray-200 focus-within:border-primary/50 transition-colors">
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  placeholder="Ask about your project..." 
+                  placeholder="Ask about your project..."
                   className="flex-grow bg-transparent border-none outline-none px-4 text-sm text-heading placeholder-gray-400"
                 />
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={!inputValue.trim() || isTyping}
                   className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors disabled:opacity-50"
                 >

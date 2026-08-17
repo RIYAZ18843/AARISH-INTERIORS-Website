@@ -68,7 +68,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="text-primary shrink-0" size={20} />
-                <a href="https://wa.me/919876543210?text=Hello%20Aarish%20Interiors!%20%F0%9F%91%8B%0AI%20am%20looking%20for%20interior%20design%20services%20for%20my%20property%3A%0A%0A%5B%20%5D%201%20BHK%0A%5B%20%5D%202%20BHK%0A%5B%20%5D%203%20BHK%2B%0A%5B%20%5D%20Villa%0A%0APlease%20share%20more%20details." target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                <a href="https://wa.me/919010952596?text=Hello%20Aarish%20Interiors!%20%F0%9F%91%8B%0AI%20am%20looking%20for%20interior%20design%20services%20for%20my%20property%3A%0A%0A%5B%20%5D%201%20BHK%0A%5B%20%5D%202%20BHK%0A%5B%20%5D%203%20BHK%2B%0A%5B%20%5D%20Villa%0A%0APlease%20share%20more%20details." target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                   {siteData.contact.phone}
                 </a>
               </li>

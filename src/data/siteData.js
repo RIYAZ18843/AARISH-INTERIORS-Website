@@ -29,7 +29,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 
 export const siteData = {
   contact: {
-    phone: '+91 98765 43210',
+    phone: '+91 9010952596',
     email: 'info@aarishinteriors.com',
     address: 'House No. 1, Attapur, Upperpally, Pillar No. 190, Hyderabad 500048, India'
   },
